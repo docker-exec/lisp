@@ -1,12 +1,12 @@
-# Docker Exec Image: Lisp
+# Docker Exec Image: s
 
-A Dockerfile describing an container capable of executing Lisp source files.
+A Dockerfile describing an container capable of executing s source files.
 
 # Build
 
 ```sh
 git clone https://github.com/docker-exec/lisp.git
-docker build -t dexec/lisp .
+docker build -t dexec/lang-lisp .
 ```
 
 # Usage
@@ -16,7 +16,7 @@ In a directory containing a script e.g. foo.lisp, run:
 ```sh
 docker run -t --rm \
     -v $(pwd -P)/foo.lisp:/tmp/dexec/build/foo.lisp \
-    dexec/lisp foo.lisp
+    dexec/lang-lisp foo.lisp
 ```
 
 ## Passing arguments to the script
@@ -34,7 +34,7 @@ Each argument passed must be prefixed in this way, e.g.
 ```sh
 docker run -t --rm \
     -v $(pwd -P)/foo.lisp:/tmp/dexec/build/foo.lisp \
-    dexec/lisp foo.lisp \
+    dexec/lang-lisp foo.lisp \
     --arg='hello world' \
     --arg=foo \
     --arg=bar
